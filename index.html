@@ -29,7 +29,119 @@
             font-weight: 700;
             font-style: normal;
         }
-        
+        body {
+            color: #1E1A36;
+            font-family: "Cerebri Sans", sans-serif;
+            background-color: #ECECFB;
+            background-image: radial-gradient(#d0d2e4 0.5px, #f2f2fc 0.5px);
+            background-size: 15px 15px;
+        }
+
+        body.dark {
+            background-image: radial-gradient(#002b45 0.5px, #00172d 0.5px);
+        }
+
+        .change-theme-button {
+            text-align: center;
+        }
+
+        body.dark .container {
+            background: #1b2a49;
+        }
+
+        body.dark h2,
+        body.dark p {
+            color: #c1c8d3;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: #1E1A36;
+            font-size: 38px;
+            line-height: 48px;
+        }
+
+        body.dark h1 {
+            color: #c1c8d3;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #1E1A36;
+            font-family: "Arial", sans-serif;
+            line-height: 26px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        body.dark a {
+            color: #c1c8d3;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 30px;
+            font-family: 'Roboto', sans-serif;
+            color: #555;
+        }
+
+        img {
+            border-radius: 12px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark .change-theme-button {
+            background: #1b2a49;
+            color: #fff;
+        }
+
+        body.dark .change-theme-button:hover {
+            background: #0056b3;
+        }
+
+        .change-theme-button {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            padding: 15px 25px;
+            background-color: #007bff;
+            cursor: pointer;
+            transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+            /* Smooth transition for hover effect */
+            margin: 0 auto;
+        }
+
+        .change-theme-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            opacity: .9;
+        }
+
+        body.dark .change-theme-button:hover {
+            opacity: .9;
+        }
 
 </head>
 
