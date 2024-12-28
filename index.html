@@ -36,6 +36,8 @@
             background-color: #ECECFB;
             background-image: radial-gradient(#d0d2e4 0.5px, #f2f2fc 0.5px);
             background-size: 15px 15px;
+            margin: 0;
+            padding: 0;
         }
 
         body.dark {
@@ -50,24 +52,27 @@
             background: #1b2a49;
         }
 
-        body.dark h2,
-        body.dark p {
-            color: #c1c8d3;
+        .container {
+            background: #f5f5f5;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 50px auto;
+            max-width: 600px;
+            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.1);
+
         }
 
-        h1,
-        h2 {
-            text-align: center;
-            margin: 15px 0;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            text-transform: uppercase;
+        body.dark.container {
+            background: #1f1f1f;
+            color: #555;
+            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            color: #1E1A36;
             font-size: 38px;
-            line-height: 48px;
+            margin: 20px 0;
+            color: #1E1A36;
+            text-transform: uppercase;
         }
 
         body.dark h1 {
@@ -76,18 +81,19 @@
 
         h2 {
             font-size: 24px;
+            margin-bottom: 20px;
             color: #1E1A36;
             font-family: "Arial", sans-serif;
-            line-height: 26px;
         }
+
+        body.dark p {
+            color: #c1c8d3;
+        }
+
 
         a {
             color: #007bff;
             text-decoration: none;
-        }
-
-        body.dark a {
-            color: #c1c8d3;
         }
 
         a:hover {
@@ -95,79 +101,83 @@
             text-decoration: underline;
         }
 
+
         p {
             font-size: 15px;
             line-height: 30px;
             font-family: 'Roboto', sans-serif;
-            color: #555;
         }
 
         img {
             border-radius: 12px;
             max-width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
         }
 
-        body.dark .change-theme-button {
-            background: #1b2a49;
-            color: #fff;
+        img:hover {
+            transform: scale(1.05);
         }
 
-        body.dark .change-theme-button:hover {
-            background: #0056b3;
-        }
-
-        .change-theme-button {
+        .change-theme-button,
+        .play-button {
             display: block;
-            color: #fff;
-            font-size: 16px;
-            font-family: "Roboto", sans-serif;
-            text-transform: uppercase;
-            font-weight: bold;
-            border-radius: 50px;
-            border: none;
             padding: 15px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
             background-color: #007bff;
+            color: white;
+            border: none;
             cursor: pointer;
-            transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
-            /* Smooth transition for hover effect */
+            margin-top: 20px;
             margin: 0 auto;
+            transition: background-color 0.3s, transform 0.3s ease;
         }
 
-        .change-theme-button:hover {
+        .change-theme-button:hover,
+        .play-button:hover {
             background-color: #0056b3;
             transform: scale(1.05);
-            opacity: .9;
-        }
-
-        body.dark .change-theme-button:hover {
-            opacity: .9;
         }
 
         .play-button {
-            background: #007bff;
-            color: white;
-            display: block;
-            margin: 30px auto;
-            width: 90%;
-            border-radius: 50px;
-            border: none;
-            font-size: 24px;
-            font-family: "Helvetica Neue", sans-serif;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
-            border: 1px solid transparent;
+            font-size: 18px;
         }
 
-        .play-button:hover {
-            background: #fff;
-            opacity: 90%;
-            color: #007bff;
-            transform: scale(1.05);
-            border: 1px solid #007bff;
+        .football-image {
+            margin: 20px 0;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .football-image:hover {
+            transform: scale(1.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .grid img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid img:hover {
+            transform: scale(1.5);
+            /* Enlarges image on hover */
+        }
+
+        .highlight {
+            font-size: 16px;
+            color: #555;
         }
 
         small {
@@ -178,25 +188,22 @@
             color: rgb(128, 128, 128);
         }
 
-        .container {
-            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.1);
-            margin: 50px auto;
-            background: #f5f5f5;
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 12px;
+        .logo {
+            max-width: 100px;
+            display: block;
+            margin: 20px auto;
         }
 
-        body.dark.container {
-            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.3);
-            background: #1f1f1f;
-            color: #555;
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
-        .highlight {
-            padding-bottom: 20px;
-            font-size: 16px;
-            color: #555;
+        .logo img:hover {
+            transform: scale(1.1);
         }
 
         .logo,
@@ -210,21 +217,6 @@
             display: none;
         }
 
-        .logo img {
-            height: 40px;
-            object-fit: contain;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-
-        .logo img:hover {
-            transform: scale(1.1);
-        }
-
-        .logo span:hover {
-            transform: scale(1.1);
-        }
-
         body.dark .logo-light {
             display: block;
         }
@@ -233,27 +225,6 @@
             display: none;
         }
 
-        .football-image {
-            margin: 15px 0;
-            background-origin: 10px 10px;
-            transition: all 150ms ease-in-out;
-        }
-
-        .football-image:hover {
-            transform: scale(1.5);
-            /* Enlarges image on hover */
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
-
-        .grid img {
-            object-fit: cover;
-            aspect-ratio: 16 / 9;
-        }
 
         .football-link {
             color: #007bff;
@@ -268,37 +239,53 @@
             text-decoration: underline;
             transform: scale(1.1);
         }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .change-theme-button,
+            .play-button {
+                width: 100%;
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .football-image {
+                max-height: 250px;
+            }
+
+            .container {
+                padding: 30px;
+            }
+
+            .highlight {
+                font-size: 14px;
+            }
+        }
     </style>
 
 </head>
 
 <body class="dark">
-    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
+    <!-- Header Section -->
+
+
+    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/153/617/original/football.gif?1735412318"
         class="logo" alt="Football Logo">
     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
         class="logo-light" alt="Football Logo">
-    </a>
-    <h1>Football</h1>
+
+    </header>
 
     <button id="change-theme-button" class="change-theme-button"> Change theme</button>
     <div class="container">
         <h1>⚽ What is Football?</h1>
-        <h2> My favorite type of football</h2>
-        <a href="https://www.youtube.com/watch?v=gd4hH4F-Kfg" target="_blank">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/166/original/wp6900538.jpg?1726684517"
-                class="football-image" alt="Female football">
-        </a>
-        <div class="grid">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/167/original/skysports-england-lionesses_5826782.jpg?1726684791"
-                class="picture-grid" alt="Female football">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/168/original/1511289284_781382_1529750479_noticiareportajes_grande.jpg?1726685039"
-                class="picture-grid" alt="Male football">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/169/original/HD-wallpaper-2019-fifa-women-s-world-cup-football-soccer-world-cup-fifa-women-thumbnail.jpg?1726685108"
-                class="picture-grid" alt="Female football">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/170/original/r16.jpeg?1726685200"
-                class="picture-grid" alt="Country football">
-        </div>
-
         <div class="highlight">
             <p>
                 <strong>Football</strong> game in which two teams of 11 players, using any part of their bodies except
@@ -323,6 +310,25 @@
                             </a>
             </p>
         </div>
+
+        <div class="grid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/167/original/skysports-england-lionesses_5826782.jpg?1726684791"
+                class="picture-grid" alt="Female football">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/168/original/1511289284_781382_1529750479_noticiareportajes_grande.jpg?1726685039"
+                class="picture-grid" alt="Male football">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/170/original/r16.jpeg?1726685200"
+                class="picture-grid" alt="Country football">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/169/original/HD-wallpaper-2019-fifa-women-s-world-cup-football-soccer-world-cup-fifa-women-thumbnail.jpg?1726685108"
+                class="picture-grid" alt="Female football">
+            <a href="https://www.youtube.com/watch?v=gd4hH4F-Kfg" target="_blank">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/144/166/original/wp6900538.jpg?1726684517"
+                    class="football-image" alt="Female football">
+            </a>
+        </div>
+
+        <br />
+
+
         <button id="play-button" class="play-button">Sign up for exclusive football coaching today!</button>
         <p>
             <small>
