@@ -13,7 +13,7 @@
             font-weight: 300;
             font-style: normal;
         }
-    
+
         @font-face {
             font-family: "Montserrat";
             src: url(../fonts/Montserrat/Montserrat-Regular.eot);
@@ -21,7 +21,7 @@
             font-weight: 500;
             font-style: normal;
         }
-    
+
         @font-face {
             font-family: "Montserrat";
             src: url(../fonts/Montserrat/Montserrat-Bold.eot);
@@ -29,6 +29,7 @@
             font-weight: 700;
             font-style: normal;
         }
+
         body {
             color: #1E1A36;
             font-family: "Cerebri Sans", sans-serif;
@@ -143,14 +144,139 @@
             opacity: .9;
         }
 
+        .play-button {
+            background: #007bff;
+            color: white;
+            display: block;
+            margin: 30px auto;
+            width: 90%;
+            border-radius: 50px;
+            border: none;
+            font-size: 24px;
+            font-family: "Helvetica Neue", sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+            border: 1px solid transparent;
+        }
+
+        .play-button:hover {
+            background: #fff;
+            opacity: 90%;
+            color: #007bff;
+            transform: scale(1.05);
+            border: 1px solid #007bff;
+        }
+
+        small {
+            text-align: center;
+            display: block;
+            font-size: 20px;
+            font-family: "Roboto Mono", monospace;
+            color: rgb(128, 128, 128);
+        }
+
+        .container {
+            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            background: #f5f5f5;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        body.dark.container {
+            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.3);
+            background: #1f1f1f;
+            color: #555;
+        }
+
+        .highlight {
+            padding-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .logo,
+        .logo-light {
+            max-width: 100px;
+            display: block;
+            margin: 40px auto;
+        }
+
+        .logo-light {
+            display: none;
+        }
+
+        .logo img {
+            height: 40px;
+            object-fit: contain;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo span:hover {
+            transform: scale(1.1);
+        }
+
+        body.dark .logo-light {
+            display: block;
+        }
+
+        body.dark .logo {
+            display: none;
+        }
+
+        .football-image {
+            margin: 15px 0;
+            background-origin: 10px 10px;
+            transition: all 150ms ease-in-out;
+        }
+
+        .football-image:hover {
+            transform: scale(1.5);
+            /* Enlarges image on hover */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .grid img {
+            object-fit: cover;
+            aspect-ratio: 16 / 9;
+        }
+
+        .football-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: "Arial", sans-serif;
+            transition: color 150ms ease-in-out, transform 150ms ease-in-out;
+        }
+
+        .football-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+    </style>
+
 </head>
 
 <body class="dark">
-    <a href="https://www.shecodes.io/" target="_blank">
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
-            class="logo" alt="Football Logo">
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
-            class="logo-light" alt="Football Logo">
+    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
+        class="logo" alt="Football Logo">
+    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/152/153/original/8617222.gif?1733445567"
+        class="logo-light" alt="Football Logo">
     </a>
     <h1>Football</h1>
 
@@ -185,8 +311,9 @@
                 <br>
                 Modern football originated in Britain in the 19th century. Since before
                 <strong><a href="https://www.merriam-webster.com/dictionary/medieval" target="_blank"
-                        class="football-link">medieval times,<strong><a href="https://www.britannica.com/sports/folk-football"
-                                target="_blank" class="football-link"></a>“folk football” games had been
+                        class="football-link">medieval times,<strong><a
+                                href="https://www.britannica.com/sports/folk-football" target="_blank"
+                                class="football-link"></a>“folk football” games had been
                             played in towns and villages according to local customs and with a minimum of rules.
                             <br>
                             <br>
@@ -206,7 +333,7 @@
                 "with HTML, CSS and JavaScript"
             </small>
         </p>
-        </div>
+    </div>
 
 
 
