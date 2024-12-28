@@ -335,6 +335,38 @@
         </p>
     </div>
 
+    <script>
+        function play() {
+            let quanty = prompt("Have you played Football before?");
+            let name = prompt("What is your last name?");
+            let email = prompt("What is your email?");
+
+            alert(
+                "Thanks for your interest in Football " + name + "! We’ll kick things off soon with more details. If you have any questions or want to chat about the game, feel free to reach out at agwunchachiomajane@gmail.com."
+            );
+        }
+
+        function toggleTheme() {
+            let body = document.querySelector("body");
+
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+                theme = "light";
+            } else {
+                body.classList.add("dark");
+                theme = "dark";
+            }
+        }
+
+        let button = document.querySelector("#play-button");
+        button.addEventListener("click", play);
+
+        let theme = document.querySelector("body").classList.contains("dark") ? "dark" : "light";
+        let themeButton = document.querySelector("#change-theme-button");
+        themeButton.addEventListener("click", toggleTheme);
+
+    </script>
+
 
 
 </body>
